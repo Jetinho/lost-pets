@@ -1,11 +1,4 @@
 <div class="container">
-  <h1>Edit lost pets</h1>
-
-  <%= simple_form_for @pet do |f| %>
-    <%= f.input :name, class: 'form-control' %>
-    <%= f.input :species, collection: Pet::SPECIES, class: 'form-control' %>
-    <%= f.input :lost_on, as: :date, class: 'form-control' %>
-
-    <%= f.button :submit, class: 'btn-primary' %>
-  <% end %>
+  <h1>Edit lost pet</h1>
+  <%= render 'form', pet: @pet %>
 </div>
