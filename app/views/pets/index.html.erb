@@ -1,13 +1,16 @@
 <h1>Lost pets</h1>
 
-<% @pets.each do |pet| %>
-  <%= link_to pet_path(pet) do %>
-    <div>
-      <h2><%= pet.name %></h2>
-      <p><%= pet.species %></p>
-      <% nb_days_ago = (Date.today - pet.lost_on).to_i %>
-      <p>Lost <%= nb_days_ago %> <%= "day".pluralize(nb_days_ago) %> ago.</p>
+<div class="row">
+  <% @pets.each do |pet| %>
+    <div class="col-4">
+      <%= link_to pet_path(pet), class: "text-decoration-none text-dark" do %>
+        <div class="m-2 p-2 border border-dark">
+          <h2><%= pet.name %></h2>
+          <p><%= pet.species %></p>
+          <% nb_days_ago = (Date.today - pet.lost_on).to_i %>
+          <p>Lost <%= nb_days_ago %> <%= "day".pluralize(nb_days_ago) %> ago.</p>
+        </div>
+      <% end %>
     </div>
   <% end %>
-<% end %>
-
+</div>

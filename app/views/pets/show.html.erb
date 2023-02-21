@@ -1,9 +1,6 @@
-<div>
-  <h2><%= @pet.name %></h2>
-  <p><%= @pet.species %></p>
-  <% nb_days_ago = (Date.today - @pet.lost_on).to_i %>
-  <p>Lost <%= nb_days_ago %> <%= "day".pluralize(nb_days_ago) %> ago.</p>
-  <%= link_to 'Edit lost pet', edit_pet_path %>
-  <%= link_to 'Destroy lost pet', pet_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
-</div>
-
+<h2><%= @pet.name %></h2>
+<p><%= @pet.species %></p>
+<% nb_days_ago = (Date.today - @pet.lost_on).to_i %>
+<p>Lost <%= nb_days_ago %> <%= "day".pluralize(nb_days_ago) %> ago.</p>
+<%= link_to 'Edit lost pet', edit_pet_path %>
+<%= link_to 'Destroy lost pet', pet_path, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
