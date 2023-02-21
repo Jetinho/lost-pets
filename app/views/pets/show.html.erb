@@ -1,6 +1,6 @@
 <div>
   <h2><%= @pet.name %></h2>
   <p><%= @pet.species %></p>
-  <% nb_days_ago = (Date.today - @pet.date).to_i %>
+  <% nb_days_ago = (Date.today - @pet.lost_on).to_i %>
   <p>Lost <%= nb_days_ago %> <%= "day".pluralize(nb_days_ago) %> ago.</p>
 </div>
