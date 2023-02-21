@@ -1,0 +1,14 @@
+<h1>Lost pets</h1>
+
+<%= link_to 'Add new pet', new_pet_path %>
+
+<% @pets.each do |pet| %>
+  <%= link_to pet_path(pet) do %>
+    <div>
+      <h2><%= pet.name %></h2>
+      <p><%= pet.species %></p>
+      <p>Lost <%= pet.date %> <%= "day".pluralize(pet.date) %> ago.</p>
+    </div>
+  <% end %>
+<% end %>
+
